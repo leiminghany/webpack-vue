@@ -17,5 +17,33 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
+  module:{
+    rules: [
+      { //匹配后缀名为css的文件,然后分别用css-loader，vue-style-loader去解析
+       //解析器的执行顺序是从下往上(先css-loader再vue-style-loader)
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ],
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader?indentedSyntax'
+        ],
+      }
+    ]
+  },
   mode: 'development'
 };
