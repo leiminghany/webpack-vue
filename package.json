@@ -7,11 +7,16 @@
     "dev": "webpack-dev-server"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "vue": "^2.6.10",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "7.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^3.2.0",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
