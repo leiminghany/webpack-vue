@@ -4,6 +4,6 @@ export function say() {
 
 export function getData() {
   return new Promise((resolve, reject) => {
-    setTimeout(resolve, 3000, "finished");
+    setTimeout(resolve, 1500, "");
   })
 }

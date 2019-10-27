@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './src/main.js'], // 项目的入口文件，webpack会从main.js开始，把所有依赖的js都加载打包
@@ -9,6 +10,7 @@ module.exports = {
     filename: 'build.js' // 打包后的文件名
   },
   devServer: {
+    host: '0.0.0.0',
     historyApiFallback: true, //historyApiFallback设置为true那么所有的路径都执行index.html。
     overlay: true // 将错误显示在html之上
   },
@@ -17,6 +19,9 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
   module:{
     rules: [
       { //匹配后缀名为css的文件,然后分别用css-loader，vue-style-loader去解析
@@ -55,6 +60,24 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
+        }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loader: {
+            'scss': [
+              'vue-style-loader',
+              'css-loader',
+              'sass-loader'
+            ],
+            'sass': [
+              'vue-style-loader',
+              'css-loader',
+              'sass-loader?indentedSyntax'
+            ]
+          }
         }
       }
     ]
