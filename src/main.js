@@ -1,3 +1,10 @@
 import say from './util.js';
-say();
+import Vue from 'vue';
 
+say();
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'hello Vue!'
+  }
+})

@@ -12,5 +12,10 @@ module.exports = {
     historyApiFallback: true, //historyApiFallback设置为true那么所有的路径都执行index.html。
     overlay: true // 将错误显示在html之上
   },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  },
   mode: 'development'
 };
