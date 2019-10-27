@@ -1,3 +1,3 @@
-var say = require('./util.js');
+import say from './util.js';
 say();
 
