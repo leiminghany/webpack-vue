@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server --mode development",
+    "build": "webpack --mode development"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

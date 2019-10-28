@@ -19,6 +19,11 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   plugins: [
     new VueLoaderPlugin()
   ],
@@ -83,5 +88,4 @@ module.exports = {
     ]
   },
   devtool: '#eval-source-map',
-  mode: 'development'
 };
